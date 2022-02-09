@@ -64,8 +64,8 @@ if __name__ == '__main__':
     
     cur_cords = eval(r['face_box_cords'])
     cur_img = r['photo_image_url']
-    print(cur_img,cur_cords)
-    image_bytes = requests.get(cur_img)
+    # print(cur_img,cur_cords)
+    image_bytes = requests.get(cur_img.split('?')[0])
 
     image_bytes = image_bytes.content
     image_stream = BytesIO(image_bytes)
